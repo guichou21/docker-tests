@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    db:
+        image: mysql
+        #A mettre sur OSX et windows sinon permission denied
+        user: "1000:50"
+        #container-name: mysql-test-compose
+        volumes:
+          - ./mysql-datadir:/var/lib/mysql
+        ports:
+          - 6603:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
